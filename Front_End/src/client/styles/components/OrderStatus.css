@@ -1,0 +1,101 @@
+.order-status {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: 150px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-status h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+}
+
+th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: 600;
+}
+
+td {
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .order-status {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 12px;
+    }
+}
+.cancel-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-modal textarea {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.cancel-modal button {
+    margin: 5px;
+}
+
+.button-detail {
+    background-color: #56A4FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-detail:hover {
+    background-color: #4090e0;
+}

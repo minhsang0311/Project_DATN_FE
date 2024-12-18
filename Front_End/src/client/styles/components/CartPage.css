@@ -1,0 +1,191 @@
+.cart-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.cart-page h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.cart-page .cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-page .cart-table th,
+.cart-page .cart-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.cart-page .cart-table th {
+  background-color: #4fc3f7;
+  color: white;
+  font-weight: bold;
+}
+
+.cart-page .cart-page .cart-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.cart-page .cart-table img {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cart-page .quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-page .quantity-controls button {
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-page .quantity-controls button:hover {
+  background-color: #1976D2;
+}
+
+.cart-page .btn-payment {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin: 10px 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.cart-page .btn-payment:hover {
+  background-color: #1976D2;
+}
+.cart-page .btn-clear-cart {
+  background-color: #f44336;  /* Màu đỏ */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin: 10px 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cart-page .btn-clear-cart:hover {
+  background-color: #d32f2f;  /* Màu đỏ đậm khi hover */
+}
+
+
+/* Existing previous CSS remains the same */
+
+@media (max-width: 768px) {
+  .cart-page {
+    padding: 10px;
+    margin-top: 50px;
+  }
+
+  /* Truncate long product names */
+  .cart-page .cart-table td:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: -webkit-nowrap;
+    white-space: nowrap;
+  }
+
+  /* Multi-line truncation for product names */
+  .cart-page .cart-table td:nth-child(2) {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 5em; /* Approximately 3 lines */
+    line-height: 1.5em;
+    white-space: normal;
+  }
+
+  /* Rest of the existing mobile styles */
+  .cart-page .cart-table th,
+  .cart-page .cart-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .cart-page .quantity-controls button {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .cart-page .quantity-controls input[type="number"] {
+    width: 40px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .cart-page .cart-table img {
+    width: 40px;
+  }
+
+  .cart-page .btn-clear-cart,
+  .cart-page .btn-payment {
+    font-size: 12px;
+    padding: 8px 10px;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Keep the existing tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cart-page {
+    padding: 15px;
+    margin-top: 100px;
+    max-width: 90%;
+  }
+
+  .cart-page .cart-table th,
+  .cart-page .cart-table td {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .cart-page .cart-table img {
+    width: 60px;
+  }
+
+  .cart-page .btn-clear-cart,
+  .cart-page .btn-payment {
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+
+  .cart-page .quantity-controls button {
+    padding: 6px 10px;
+  }
+}

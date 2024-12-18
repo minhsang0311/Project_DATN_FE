@@ -1,0 +1,107 @@
+header .bottom_trangchu .menu_trangchu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-weight: 600;
+    padding: 0px 5%;
+    justify-content: center;
+    flex-wrap: wrap; /* Cho phép các mục tự động xuống dòng */
+  }
+  
+  header .bottom_trangchu .menu_trangchu a {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 17px;
+    color: #784040;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 20px;
+  }
+  
+  header .bottom_trangchu .menu_trangchu a:hover {
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.5), rgba(18, 153, 190, 0.5));
+    color: #ffffff;
+  }
+  header .bottom_trangchu .mobile_menu_icon {
+    display: none;
+    cursor: pointer;
+    color: #784141;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    header .bottom_trangchu .menu_trangchu a {
+      font-size: 15px; /* Giảm kích thước chữ */
+      padding: 6px 10px; /* Giảm padding để tiết kiệm không gian */
+    }
+  }
+  
+  /* Media query cho màn hình nhỏ hơn 769px */
+  @media (max-width: 769px) {
+    header .bottom_trangchu .mobile_menu_icon {
+      display: block;
+    }
+  
+    /* Ẩn menu ngang khi chưa bấm icon */
+    header .bottom_trangchu .menu_trangchu {
+      display:block;
+      flex-direction: column; /* Chuyển sang dạng cột */
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      opacity: 0;
+    }
+  
+    /* Hiển thị menu khi bấm icon */
+    header .bottom_trangchu .menu_trangchu.show {
+      display: flex;
+      gap:0px;
+      padding: 15px 0;
+      opacity: 1; /* Fully visible */
+      transform: translateY(20px); /* Slide the menu into place */
+      transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition effects */
+    }
+  
+    @media (max-width: 769px) {
+      header .bottom_trangchu .menu_trangchu.show a {
+        font-size: 14px;            /* Giảm kích thước chữ */
+        text-align: center;         /* Căn giữa chữ */
+        width: 100%;                /* Mỗi link chiếm toàn bộ chiều rộng */
+        display: block;             /* Đảm bảo các link nằm dọc */
+        font-weight: 500;
+        border-radius: 0;
+        padding: 10px 0;           /* Tăng padding để dễ bấm hơn */
+        position: relative;         /* Để sử dụng pseudo-element */
+        margin:0;
+        transition: color 0.3s ease;
+      }
+    
+      /* Tạo viền dưới ngắn nằm giữa khi hover */
+      header .bottom_trangchu .menu_trangchu.show a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        width: 50px;               /* Độ dài của viền dưới */
+        height: 2px;               /* Độ dày của viền */
+        background-color: transparent;
+        transform: translateX(-50%); /* Căn giữa viền */
+        transition: background-color 0.3s ease;
+      }
+    
+      header .bottom_trangchu .menu_trangchu.show a:hover {
+        color: #007bff;            /* Chữ chuyển sang màu xanh */
+        background: #ffffff;       /* Nền trắng */
+      }
+    
+      header .bottom_trangchu .menu_trangchu.show a:hover::after {
+        background-color: #007bff; /* Viền màu xanh khi hover */
+      }
+    }
+    
+}
+  

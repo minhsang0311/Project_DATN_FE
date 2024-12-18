@@ -1,0 +1,147 @@
+.box-productlist {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.headertop-admin {
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.header_admin {
+    display: flex;
+    justify-content: space-between;
+    background-color: #56A4FF;
+    height: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.header_admin>h2 {
+    font-size: 24px;
+    color: white;
+}
+
+.header_admin .button_admin {
+    background-color: white;
+    padding: 10px 20px;
+    border: none;
+    color: #56A4FF;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.header_admin .button_admin a {
+    text-decoration: none;
+    color: #56A4FF;
+    font-size: 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 80px 180px 140px 160px 290px 100px 90px 140px;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-header {
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.grid-item {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px; /* Bo tròn các góc */
+}
+.grid-item .description {
+    margin: 5px 0; /* Khoảng cách giữa các dòng mô tả */
+    font-size: 14px; /* Kích thước chữ */
+    color: #333; /* Màu chữ */
+    text-align: left; /* Căn trái nội dung */
+    width: 100%; /* Đảm bảo mô tả chiếm toàn bộ chiều ngang của cột */
+    display: block; /* Hiển thị mỗi dòng mô tả trên một dòng mới */
+    white-space: pre-wrap; /* Đảm bảo xuống dòng khi có ký tự newline \n trong dữ liệu */
+}
+
+.product-img {
+    max-width: 60px;
+    border-radius: 5px;
+}
+
+.grid-item-button {
+    display: flex;
+    justify-content: space-around;
+}
+.grid-item-element {
+    display: flex;
+}
+
+.edit-btn,
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    color: #007bff;
+}
+
+.delete-btn {
+    color: #dc3545;
+}
+
+.image-preview-item {
+    position: relative;
+    /* This allows us to position the "X" icon relative to the image */
+    display: inline-block;
+    margin: 5px;
+}
+
+.image-preview-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    /* Ensures image scaling */
+}
+
+.image-preview-item button {
+    position: absolute;
+    /* Absolute positioning to place the button on top of the image */
+    top: -17px;
+    /* Align it at the top of the container */
+    right: -17px;
+    /* Align it to the right of the container */
+    background-color: transparent;
+    /* Make background transparent */
+    border: none;
+    /* Remove default button border */
+    color: #fff;
+    /* White icon color */
+    font-size: 18px;
+    /* Adjust size of the icon */
+    cursor: pointer;
+    /* Change cursor to pointer to indicate it's clickable */
+    padding: 5px;
+}
+
+.image-preview-item button i {
+    color: black;
+}
+

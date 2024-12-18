@@ -1,0 +1,133 @@
+
+.container-statistics {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: white;
+}
+.container-statistics h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.statistics-chillrend-header{
+    margin-bottom: 100px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.statistics-chillrend-header_product{
+    margin-bottom: 100px;
+    height: 440px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.revenue-statistics{
+    margin-bottom: 100px;
+    height: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.filter-section label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.filter-section input[type="date"] {
+    padding: 8px;
+    font-size: 1rem;
+    width: 160px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #56A4FF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-section button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.filter-section button:hover:not(:disabled) {
+    background-color: #2786f3;
+}
+.statistics {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+
+}
+
+.vertical-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vertical-table th, .vertical-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.vertical-table th {
+    background-color: #f2f2f2;
+    width: 70%;
+}
+
+.vertical-table td {
+    width: 50%;
+    text-align: center;
+}
+
+.statistics .left h2 {
+    text-align: center;
+}
+
+.statistics .left h3 {
+    text-align: center;
+    margin-top: 20px;
+}
+.statistics .right, .left, .center {
+    width: 100%; 
+    
+    justify-items: center;
+}
+.statistics .left div {
+    margin: auto;
+    border-radius: 50%; /* Make it circular */
+    padding: 20px; /* Padding inside the circle */
+    display: inline-block; /* Fit to the content */
+    background-color: #ffffff;
+}
+.statistics .right div{
+    height: 300px;
+    width: 300px;
+}
+.statistics .center div {
+    text-align: center;
+    align-items: center;
+    height: 300px;
+    width: 350px;
+}
+.pie_order{
+    width: 300px;
+    height: 300px;
+}

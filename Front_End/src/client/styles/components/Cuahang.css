@@ -1,0 +1,147 @@
+* {margin: 0;padding: 0;box-sizing: border-box;font-family:'Montserrat', sans-serif;}
+.cuahang{margin-top: 130px;}
+.cuahang .thanh-dieu-huong{color: white;display: flex;gap:7px;height: 40px;line-height: 40px;padding-left: 6%;background-color: rgb(77, 202, 255);box-shadow: 0 1px 2px 0 rgba(60,64,67,0.1),0 2px 6px 2px rgba(60,64,67,0.15);}
+.cuahang .thanh-dieu-huong a{margin: 0;font-size: 12px;color: rgb(255, 255, 255);}
+.cuahang .thanh-dieu-huong h3{font-weight: 100;}
+.cuahang .noidung{
+   display: grid;grid-template-columns: 2fr 7fr;gap: 10px;
+   background-color: rgb(255, 255, 255);border-radius: 10px;
+   padding: 20px;max-width: 1350px;margin: 20px auto 10px;box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;}
+
+.cuahang .noidung .left_box {
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 0 5px;
+}
+
+.cuahang .noidung .left_box h4 {
+   margin: 10px;
+   color: rgb(49, 43, 207);
+   font-weight: 600;
+}
+/* .cuahang .noidung .left_box {width: 20%;} */
+.cuahang .noidung .left_box img {width: 100%;height: 425px;border-radius: 10px;}
+.cuahang .noidung .left_box button,
+.cuahang .noidung .left_box select,
+.cuahang .noidung .left_box .price-range input {
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 14px;
+   background-color: #f9f9f9;
+   color: #333;
+   cursor: pointer;
+   outline: none;
+   margin: 0 5px 10px 0;
+}
+
+.cuahang .noidung .left_box button.active{
+   border-color: #1295d1;
+   color: #1295d1;
+}
+.cuahang .noidung .left_box select:focus,
+.cuahang .noidung .left_box .price-range input:focus {
+   border-color: #1295d1;
+}
+
+.cuahang .noidung .left_box .price-range {
+   margin: 5px 0;
+   color: #333;
+}
+
+.cuahang .noidung .left_box .loc_boloc {
+   margin-top: 20px;
+}
+
+.cuahang .noidung .left_box .loc_boloc button {
+   background-color: #1295d1;
+   color: white;
+}
+
+.cuahang .noidung .left_box .loc_boloc button.clear-filters {
+   background-color: #fe7424;
+}
+
+.cuahang .box-sp {display: grid;grid-template-columns: repeat(3, 1fr);gap: 20px;}
+.cuahang .box-sp .product {
+   min-width: 170px;background-color: rgb(255, 255, 255);height: 400px;box-shadow: 0 0px 2px 0 rgba(60,64,67,0.1), 0 0px 6px 0px rgba(60,64,67,0.25);border-radius: 10px;position: relative;}
+ .cuahang .box-sp .product .discount-label {z-index: 2;color: white;font-size: 14px;font-weight: 500;position: absolute; top:10px;left: 5px;background-color: #4FC3F7;border-radius: 5px;padding: 5px 10px}
+ .cuahang .box-sp .product .img-wrapper {
+    width: 100%; 
+    height: 270px; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cuahang .box-sp .product .img-wrapper img {width: 100%;height: 90%;transition: 0.5s;margin-top: 10px;}
+ .cuahang .box-sp .product .img-wrapper img:hover {transform: scale(1.1);}
+.cuahang .box-sp .product a {
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* Giới hạn 2 dòng */
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin: 10px 0;
+   line-height: 1.5; /* Điều chỉnh chiều cao dòng */
+   max-height: calc(2em * 2); /* Tương ứng với 2 dòng */
+   font-size: 15px;
+   color: #333;
+   text-decoration: none;
+   margin: 10px 5px;
+} 
+.cuahang .box-sp .product .price_giohang{align-items: center;display: flex;justify-content:space-between;margin-top: 10px;}
+.cuahang .box-sp .product .price .old-price {text-decoration: line-through;color: #AE9595;font-size: 14px;margin: 5px;}
+.cuahang .box-sp .product .price .new-price {font-weight: 600;color: #ee7c2a;font-size: 16px;margin: 5px}
+.cuahang .box-sp .product .add-to-cart {
+   font-size: 15px;background-color: #ffffff;padding:5px 10px;color: #4fc3f7;
+   border: 1px solid #4fc3f7;
+   border-radius: 50px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   cursor: pointer;
+   margin-right: 10px;
+ }
+ .cuahang .box-sp .product .add-to-cart:hover{background-color: #4fc3f7;color: white;}
+ .pagination {
+   display: flex;
+   justify-content: center;
+   padding: 20px 0;
+   list-style: none;
+}
+
+.pagination li {
+   margin: 0 5px;
+   cursor: pointer;
+   font-size: 1rem;
+}
+
+.pagination .active a {
+   font-weight: bold;
+   color: #007bff;
+}
+
+.pagination a {
+   padding: 8px 12px;
+   color: #333;
+   text-decoration: none;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+}
+
+.pagination a:hover {
+   background-color: #f0f0f0;
+   color: #007bff;
+}
+@media (max-width: 800px) {
+   .cuahang .noidung{ grid-template-columns: 1fr;}
+   .cuahang .right-products .box-sp {grid-template-columns: repeat(2, 1fr);}
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+   .cuahang {grid-template-columns: 1fr;}
+   .cuahang .right-products .box-sp {grid-template-columns: repeat(2, 1fr);}
+
+}
+
+
+
+

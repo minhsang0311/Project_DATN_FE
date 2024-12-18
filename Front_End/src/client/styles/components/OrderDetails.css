@@ -1,0 +1,118 @@
+/* Giao diện chính cho trang chi tiết đơn hàng */
+.order-detail {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 70px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.order-detail h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.order-info {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.order-info p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.order-info p strong {
+    color: #333;
+}
+
+/* Giao diện phần hủy đơn hàng */
+.cancel-order {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+.cancel-order select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.cancel-order select:focus {
+    border-color: #56A4FF;
+    outline: none;
+}
+
+.cancel-order textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    resize: none;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.cancel-order textarea:focus {
+    border-color:#56A4FF;
+    outline: none;
+}
+
+/* Giao diện nút "Hủy đơn hàng" */
+.cancel-order button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: #56A4FF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cancel-order button:hover {
+    background: #1b518f;
+}
+
+/* Thông báo lỗi */
+.error {
+    color:#56A4FF;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Giao diện cho responsive */
+@media (max-width: 768px) {
+    .order-detail {
+        padding: 15px;
+    }
+
+    .cancel-order button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

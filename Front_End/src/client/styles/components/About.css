@@ -1,0 +1,119 @@
+#About img{width:100%;height: 500px;}
+#About .ve-chung-toi {padding:80px 20px 50px;text-align: center;max-width: 1080px;width: 100%;margin: 0 auto;}
+#About .ve-chung-toi h2{font-size: 32px;font-weight: 700;margin:0 auto 24px;color: #202325;}
+#About .ve-chung-toi p{margin: 0 auto 30px;color: #797b7c;font-size: 16px;line-height: 28px;}
+#About .ve-chung-toi span{font-size: 18px;color: #1c95cd;}
+#About .text-box{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;}
+#About .text-item{
+  max-width: 100%;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .25);
+  border-radius: 8px;
+  padding: 25px;
+  }
+#About .text-item h1{
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 20px;
+  color: #202325;}
+  #About .text-item p{
+    color: #797b7c;
+    font-size: 16px;
+    line-height: 28px;}
+  #About .product-box{
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .25);
+    text-align: center;max-width: 1200px;margin: 60px auto 30px;
+    border-radius: 8px;display: flex;justify-content:space-between;
+    padding: 20px;
+  }
+  #About .product-box .trai h1{
+    color: #202325;
+    font-size: 23px;
+    padding: 0 10px 50px;
+  }
+  #About .product-box .trai ul{
+    color: #56595b;
+    font-size: 17px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 30px;
+  }
+  #About .product-box .trai1 ul li{
+    text-shadow: 0 2px 4px 1px rgba(0, 0, 0, .25);
+  }
+  #About .product-box .phai1{display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;}
+
+  #About .product-box .phai1 img{  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    height: 170px;
+  }  
+#About{margin-top: 130px;}
+
+#About .video{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin: 0 auto 10px;
+  max-width: 1200px;
+  border-radius: 8px;
+}
+#About .video .tieu_de {display: flex;}
+#About .video .tieu_de h1{
+  font-size: 20px;
+  color: #56595b;
+  padding: 25px 0;
+  font-weight: 500;
+}
+#About .video .tieu_de .hk{
+  width: 5px;
+  height: 40px;
+  background-color: rgb(153, 150, 237);
+  border-radius: 10px;
+  margin : 17px 20px;
+}
+#About .video .box_video {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Giảm khoảng cách giữa các iframe để phù hợp với màn hình nhỏ */
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0 10px 30px; /* Giảm padding để phù hợp với màn hình nhỏ */
+}
+
+#About .video .box_video iframe {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #About .ve-chung-toi h2{font-size: 25px;}
+  #About .text-box {grid-template-columns: 1fr;gap:20px;padding: 0 10px;}
+  #About .video{margin: 0 10px 10px;}
+  #About .product-box{flex-wrap: wrap;justify-content: center;;margin: 60px 10px 30px;}
+  #About .product-box .trai h1{padding:15px 0 30px}
+  #About .product-box .trai ul{display: flex;gap:30px;padding:0 0 30px;}
+}
+
+@media (max-width: 769px) {
+  #About .ve-chung-toi{padding: 30px 20px;}
+  #About .ve-chung-toi h2{font-size: 23px;}
+  #About .text-item h1{font-size: 18px;}
+  #About .text-item p{font-size: 14px;}
+  #About .text-box {grid-template-columns: 1fr;gap:20px;padding: 0 10px;}
+  #About .video{margin: 0 10px 10px;}
+  #About .product-box{flex-wrap: wrap;justify-content: center;margin: 60px 10px 30px;}
+  #About .product-box .trai h1{padding:15px 0 30px;font-size: 22px;}
+  #About .product-box .trai ul{display: flex;row-gap:5px;column-gap: 30px;padding:0 0 30px;flex-wrap: wrap;}
+  #About .product-box .trai ul li{font-size:14px;}
+  #About .product-box .phai1{grid-template-columns: repeat(3,1fr);}
+}

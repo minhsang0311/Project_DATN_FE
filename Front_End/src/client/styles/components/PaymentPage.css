@@ -1,0 +1,91 @@
+.container-pay {
+    margin-top: 150px;
+}
+
+.container-pay h1 {
+    align-items: center;
+    padding-left: 30px;
+    display: flex;
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    height: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    background-color: #56A4FF;
+}
+
+.container-payment {
+    border: 1px solid black;
+    width: 87%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 6%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.container-payment > .section {
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.section_radio {
+    display: flex;
+    align-items: center;
+}
+.section_radio input {
+    width: 30px;
+}
+.voucher input {
+    width: 350px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.payment_button {
+    padding: 10px 20px;
+    background-color: #56A4FF;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product-payment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.product-payment img{
+    width: 100px;
+    height: 100px;
+}
+.product-info {
+    margin-left: 20px;
+}
+.product-info span {
+    font-weight: bold;
+}
+.voucher label {
+    font-weight: bold
+}
+.voucher input{
+    height: 30px;
+    padding: 10px;
+}
+.money {
+    margin: 12px 0px;
+}
+.total_money span, .total_sale span{
+    font-weight: bold;
+}

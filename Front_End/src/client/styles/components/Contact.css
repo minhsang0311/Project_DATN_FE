@@ -1,0 +1,86 @@
+/* Container for the whole contact page */
+.contact-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 170px auto 0;
+}
+
+/* Contact information and form section */
+.contact-info {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+/* Contact details styling */
+.contact-details {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-details i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #007bff;
+}
+
+/* Form title styling */
+.contact-info h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.contact-form button:hover {
+    background-color: #007bff;
+}
+
+/* Google Maps container */
+.map-container {
+    flex: 1;
+    max-width: 600px;
+    height: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

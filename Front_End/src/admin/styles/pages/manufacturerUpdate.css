@@ -1,0 +1,91 @@
+/* Container for the Update Manufacturer page */
+.manufacturerUpdate-container {
+    padding: 40px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styling */
+  .manufacturerUpdate-h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Form styling */
+  .manufacturerUpdate-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .manufacturerUpdate-form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .manufacturerUpdate-form-group input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+  
+  .manufacturerUpdate-form-group input:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  /* Button styling */
+  .btn-manufacturerUpdate {
+    padding: 14px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-manufacturerUpdate:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-manufacturerUpdate:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Loading state styling */
+  .btn-manufacturerUpdate:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 600px) {
+    .manufacturerUpdate-container {
+      padding: 20px;
+    }
+  
+    .manufacturerUpdate-h2 {
+      font-size: 24px;
+    }
+  
+    .manufacturerUpdate-form-group input {
+      font-size: 14px;
+    }
+  
+    .btn-manufacturerUpdate {
+      font-size: 14px;
+    }
+  }
+  

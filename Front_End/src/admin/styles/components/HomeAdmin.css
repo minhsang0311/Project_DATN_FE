@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.home_admin {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {  
+    width: 18%;
+    padding: 0 1.7rem;
+    color: #000;
+    background-color: #fff;
+    transition: all 0.5s linear;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+.menu {
+    height: 80%;
+    list-style: none;
+    padding-top: 50px;
+}
+
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu a {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.main--content {
+    width: 82%;
+    padding: 1rem;
+    background: #d9d9d988;
+}
+
+.header--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    height: 100px;
+    padding: 10px 2rem;
+}
+
+.header--title {
+    color: rgba(68, 68, 68, 0.986);
+}
+
+/* Phần bao bọc tìm kiếm */
+.header--search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ô tìm kiếm */
+.header--search input[type="text"] {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+/* Dropdown lựa chọn loại tìm kiếm */
+.header--search select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Nút tìm kiếm */
+.header--search button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header--search button:hover {
+    background-color: #0056b3;
+}
+
+/* Biểu tượng tìm kiếm */
+.header--search i.bi-search {
+    font-size: 16px;
+}
+
+
+.user--info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 300px;
+}
+
+.user--info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}

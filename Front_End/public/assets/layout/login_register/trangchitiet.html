@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet"  href="trangchitiet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top">
+                <ul>
+                    <li>Giới thiệu</li>
+                    <li>Hỗ trợ</li>
+                    <li>Hướng dẫn</li>
+                    <li>Bài viết</li>
+                </ul>
+                <ul>
+                    <li>Liên hệ: <b>01234567</b></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <img alt=""src="img/logo.png">
+                <div class="phai">
+                    <div class="input">
+                        <input type="text" placeholder="Sản phẩm muốn tìm..." style="font-size: 15px;">
+                        <i class="fa-solid fa-magnifying-glass"></i> 
+                    </div>                    
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-doc">
+                    <div class="danh-muc" onclick="toggleDanhMuc()"><i class="fa-solid fa-bars"></i> Danh mục</div>
+                    <ul id="danh-muc-list">
+                        <li><i class="fa-solid fa-laptop"></i> Danh mục 1</li>
+                        <li><i class="fa-solid fa-mobile"></i> Danh mục 2</li>
+                        <li><i class="fa-solid fa-tv"></i> Danh mục 3</li>
+                        <li><i class="fa-solid fa-headphones"></i> Danh mục 4</li>
+                        <li><i class="fa-solid fa-tablet"></i> Danh mục 5</li>
+                        <li><i class="fa-solid fa-microchip"></i> Danh mục 6</li>
+                        <li><i class="fa-solid fa-camera"></i> Danh mục 7</li>
+                        <li><i class="fa-solid fa-gamepad"></i> Danh mục 8</li>
+                    </ul>
+                </div>
+                <div class="menu-ngang-banner">
+                    <ul class="menu-ngang">
+                        <li>TRANG CHỦ</li>
+                        <li>CỬA HÀNG</li>
+                        <li>DANH MỤC 1</li>
+                        <li>DANH MỤC 2</li>
+                        <li>DANH MỤC 3</li>
+                        <li>DANH MỤC 4</li>
+                        <li>DANH MỤC 5</li>
+                    </ul>
+                    <div class="banner">
+                        <img alt=""src="./img/banner1.jpg">
+                    </div>
+                </div>
+            </nav>
+            
+            <script>
+                function toggleDanhMuc() {
+                    const danhMucList = document.getElementById('danh-muc-list');
+                    if (danhMucList.style.display === "none" || danhMucList.style.display === "") {
+                        danhMucList.style.display = "block";
+                    } else {
+                        danhMucList.style.display = "none";
+                    }
+                }
+
+            </script>
+        </header>
+        <div class="home">
+            <div class="spbanchay">
+                <div class="left-image">
+                    <img alt="" src="./img/banner1.jpg" >
+                </div>
+                 
+
+
+    <div class="container">
+        <div class="breadcrumbs">
+            <p>Trang chủ > Đồ gia dụng > Máy xay sinh tố</p>
+        </div>
+
+        <div class="product-section">
+            <div class="product-image">
+              
+                    <img id="mainImage" src="./img/sp1." alt="Sản phẩm" width="400px">
+    
+                    <!-- Các ảnh nhỏ bên dưới -->
+                    <div class="thumbnail-images">
+                    <img class="thumbnail" src="./img/sp1.webp" alt="Thumbnail 1" width="100px">
+                    <img class="thumbnail" src="./img/sp2.jpg" alt="Thumbnail 2" width="100px">
+                    <img class="thumbnail" src="./img/sp3.webp" alt="Thumbnail 3" width="100px">
+                    <img class="thumbnail" src="./img/sp4.jpg" alt="Thumbnail 4" width="100px">
+        
+                    </div>
+                </div>
+            
+            
+            <div class="product-info">
+                <h1>Máy xay sinh tố BLACK FRIDAY SIÊU SALE</h1>
+                <hr>
+                <p>– CHỈ TRONG DỊP BLACK FRIDAY 23/11 <br>
+                <p> – Mã sp: HP 308H</p>
+                <p>– Trọng lượng: 5,5kg </p>
+                <p>– Dung tích cối đựng: 1,75 lít </p>    
+                <p> – Công suất nấu 800W; Công suất xay: tối đa 1450W </p> 
+                <p>– Tốc độ vòng quay: 45.000 vòng/phút </p>
+                <p> – Công dụng: Xay, nấu thực phẩm đa năng (cháo, súp, thịt, xương, sinh tố, đá …) </p>
+                    <p>– Màu: Đỏ mận– Xuất xứ: ĐÀI LOAN</p>
+                    <div class="price">
+                <p class="old-price">3.560.000đ</p>
+                <p class="sale-price">3.150.000đ</p></div>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+                <button class="buy-now">Mua ngay</button>
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h3>Thông số kỹ thuật</h3>
+            <table>
+                <tr>
+                    <td>Tên sản phẩm</td>
+                    <td>Máy xay nấu đa năng Haipai HP 308H</td>
+                </tr>
+                <tr>
+                    <td>Hãng</td>
+                    <td>Promix </td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td>PM-9003 </td>
+                </tr>
+                <tr>
+                    <td>Chất liệu</td>
+                    <td>Thân máy kim loại, nhựa, nút bấm cơ</td>
+                </tr>
+                <tr>
+                    <td>Công suất đầu vào</td>
+                    <td>1200W</td>
+                </tr>
+                <tr>
+                    <td>Dung tích chứa</td>
+                    <td>2 lít</td>
+                </tr>
+                <tr>
+                    <td>Điện áp/Tần số</td>
+                    <td>220 V – 50Hz</td>
+                </tr>
+                <tr>
+                    <td>Trọng lượng</td>
+                    <td>4 Kg</td>
+                </tr>
+                <tr>
+                    <td>Kích thước</td>
+                    <td>32 x 28 x 52,5 Cm</td>
+                </tr>
+                <tr>
+                    <td>Tính năng</td>
+                    <td><p>- Máy xay công nghiệp Promix 9003 được cấp bằng sáng chế về tốc độ và thời gian xay</p>
+                        <p>- Vỏ chống ổn có thể giảm 60% tiếng ồn khi xay </p>
+                        <p> - Màn hình LED có hiển thị thời gian xay và tốc độ xay </p>
+                        <p> - Chế độ phá đá để trộn, xay các nguyên liệu đặc biệt </p>
+                        <p> - Lưỡi dao sắc bén và bền bỉ</p> 
+                        <p>- Động cơ mạnh mẽ đảo bảo xay trộn được tất cả các nguyên liệu.</p>
+                        <p>- Bảo vệ an toàn gấp 3 lần máy xay bình thường </p>
+                        <p>- Xay được nhiều loại thực phẩm</p>
+
+                        </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="comment-section">
+            <h3>Bình luận</h3>
+            <div class="comment">
+                <strong>Nguyễn Văn A:</strong>
+                <p>Sản phẩm rất tốt, chất lượng đúng như mô tả, sẽ mua lại.</p>
+            </div>
+            <div class="comment">
+                <strong>Trần B:</strong>
+                <p>Máy chạy êm, xay nhuyễn, rất hài lòng.</p>
+            </div>
+            <div class="comment-input">
+                <textarea placeholder="Nhập nội dung bình luận..."></textarea>
+                <button>Gửi bình luận</button>
+            </div>
+        </div>
+    </div>
+            </div>
+    <div class="products">
+        <div class="header">
+            <h1>Sản phẩm liên quan</h1>
+            <div class="xem_them">
+                <h5>Xem thêm</h5> 
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <div class="discount-label">-20%</div>
+                <div class="img-wrapper">
+                    <img alt=""src="./img/noi.jpg">
+                </div>
+                <h1>name product</h1>
+                <div class="price">
+                    <p class="old-price">900,000đ</p>
+                    <p class="new-price">765,000đ</p>
+                </div>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <div class="discount-label">-20%</div>
+                <div class="img-wrapper">
+                    <img alt=""src="./img/noi.jpg">
+                </div>
+                <h1>name product</h1>
+                <div class="price">
+                    <p class="old-price">900,000đ</p>
+                    <p class="new-price">765,000đ</p>
+                </div>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <div class="discount-label">-20%</div>
+                <div class="img-wrapper">
+                    <img alt=""src="./img/noi2.jpg">
+                </div>
+                <h1>name productproduct product product </h1>
+                <div class="price">
+                    <p class="old-price">900,000đ</p>
+                    <p class="new-price">765,000đ</p>
+                </div>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <div class="discount-label">-20%</div>
+                <div class="img-wrapper">
+                    <img alt=""src="./img/noi.jpg">
+                </div>
+                <h1>name product</h1>
+                <div class="price">
+                    <p class="old-price">900,000đ</p>
+                    <p class="new-price">765,000đ</p>
+                </div>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <div class="discount-label">-20%</div>
+                <div class="img-wrapper">
+                    <img alt=""src="./img/noi.jpg">
+                </div>
+                <h1>name product</h1>
+                <div class="price">
+                    <p class="old-price">900,000đ</p>
+                    <p class="new-price">765,000đ</p>
+                </div>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+        
+    </div>
+        </div>
+         </div> 
+    <script>
+ // Chọn ảnh chính
+const mainImage = document.getElementById('mainImage');
+
+// Chọn tất cả ảnh nhỏ
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+// Gán sự kiện click cho từng ảnh nhỏ
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', function() {
+        // Khi click vào ảnh nhỏ, thay đổi ảnh chính
+        mainImage.src = this.src;
+    });
+});
+
+    </script>
+</body>
+</html>

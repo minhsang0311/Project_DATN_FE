@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet"  href="trangchu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top">
+                <ul>
+                    <li><a href="gioithieu.html">Giới thiệu</a></li>
+                    <li>Hỗ trợ</li>
+                    <li>Hướng dẫn</li>
+                    <li>Bài viết</li>
+                </ul>
+                <ul>
+                    <li>Liên hệ: <b>01234567</b></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <img src="../img/logo.png">
+                <div class="phai">
+                    <div class="input">
+                        <input type="text" placeholder="Sản phẩm muốn tìm..." style="font-size: 15px;">
+                        <i class="fa-solid fa-magnifying-glass"></i> 
+                    </div>                    
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-doc">
+                    <div class="danh-muc" onclick="toggleDanhMuc()"><i class="fa-solid fa-bars"></i> Danh mục</div>
+                     <ul id="danh-muc-list">
+                        <li><i class="fa-solid fa-laptop"></i><a href="#">Danh mục 1</a></li>
+                        <li><i class="fa-solid fa-mobile"></i><a href="#">Danh mục 2</a></li>
+                        <li><i class="fa-solid fa-tv"></i><a href="#">Danh mục 3</a></li>
+                        <li><i class="fa-solid fa-headphones"></i><a href="#">Danh mục 4</a></li>
+                        <li><i class="fa-solid fa-tablet"></i><a href="#">Danh mục 5</a></li>
+                        <li><i class="fa-solid fa-microchip"></i><a href="#">Danh mục 6</a></li>
+                        <li><i class="fa-solid fa-camera"></i><a href="#">Danh mục 7</a></li>
+                        <li><i class="fa-solid fa-gamepad"></i><a href="#">Danh mục 8</a></li>
+                    </ul>
+                </div>
+                <div class="menu-ngang-banner">
+                    <ul class="menu-ngang">
+                        <li>TRANG CHỦ</li>
+                        <li>CỬA HÀNG</li>
+                        <li>DANH MỤC 1</li>
+                        <li>DANH MỤC 2</li>
+                        <li>DANH MỤC 3</li>
+                        <li>DANH MỤC 4</li>
+                        <li>DANH MỤC 5</li>
+                    </ul>
+                                
+                    <div class="banner">
+                        <img src="../img/banner1.jpg" class="active">
+                        <img src="../img/banner2.webp">
+                        <img src="../img/banner3.jpg">
+                        <img src="../img/banner4.jpg">
+
+                        <div class="nav">
+                            <i class="fa-solid fa-chevron-left" id="prev"></i>
+                            <i class="fa-solid fa-chevron-right" id="next"></i>
+                        </div>
+
+                        <div class="indicators">
+                            <div class="dot active" data-index="0"></div>
+                            <div class="dot" data-index="1"></div>
+                            <div class="dot" data-index="2"></div>
+                            <div class="dot" data-index="3"></div>
+                        </div>
+                        
+                        <script>
+                            let currentIndex = 0;
+                            const images = document.querySelectorAll('.banner img');
+                            const dots = document.querySelectorAll('.indicators .dot');
+                            const totalImages = images.length;
+                    
+                            function updateBanner() {
+                                images.forEach((img, index) => {
+                                    img.classList.toggle('active', index === currentIndex);
+                                    dots[index].classList.toggle('active', index === currentIndex);
+                                });
+                            }
+                    
+                            document.getElementById('prev').addEventListener('click', () => {
+                                currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+                                updateBanner();
+                            });
+                    
+                            document.getElementById('next').addEventListener('click', () => {
+                                currentIndex = (currentIndex + 1) % totalImages;
+                                updateBanner();
+                            });
+                    
+                            dots.forEach(dot => {
+                                dot.addEventListener('click', () => {
+                                    currentIndex = parseInt(dot.dataset.index);
+                                    updateBanner();
+                                });
+                            });
+                    
+                            setInterval(() => {
+                                currentIndex = (currentIndex + 1) % totalImages;
+                                updateBanner();
+                            }, 4000); 
+                        </script>
+                    </div>
+                
+            </nav>
+            
+            <script>
+                function toggleDanhMuc() {
+                    const danhMucList = document.getElementById('danh-muc-list');
+                    if (danhMucList.style.display === "none" || danhMucList.style.display === "") {
+                        danhMucList.style.display = "block";
+                    } else {
+                        danhMucList.style.display = "none";
+                    }
+                }
+
+            </script>
+        </header>
+        <div class="home">
+            <div class="spbanchay">
+                <div class="left-image">
+                    <img src="../img/banner1.jpg">
+                </div>
+                <div class="right-products">
+                    <div class="header">
+                        <h1>Sản phẩm bán chạy</h1>
+                        <div class="xem_them">
+                            <h5>Xem thêm</h5> 
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="product-list">
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi2.jpg">
+                            </div>
+                            <h1>name productproduct product product </h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="spbanchay">
+                <div class="left-image">
+                    <img src="../img/banner1.jpg">
+                </div>
+                <div class="right-products">
+                    <div class="header">
+                        <h1>Sản phẩm bán chạy</h1>
+                        <div class="xem_them">
+                            <h5>Xem thêm</h5> 
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="product-list">
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi2.jpg">
+                            </div>
+                            <h1>name productproduct product product </h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="spbanchay">
+                <div class="left-image">
+                    <img src="../img/banner1.jpg">
+                </div>
+                <div class="right-products">
+                    <div class="header">
+                        <h1>Sản phẩm bán chạy</h1>
+                        <div class="xem_them">
+                            <h5>Xem thêm</h5> 
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="product-list">
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi2.jpg">
+                            </div>
+                            <h1>name productproduct product product </h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product">
+                            <div class="discount-label">-20%</div>
+                            <div class="img-wrapper">
+                                <img src="../img/noi.jpg">
+                            </div>
+                            <h1>name product</h1>
+                            <div class="price">
+                                <p class="old-price">900,000đ</p>
+                                <p class="new-price">765,000đ</p>
+                            </div>
+                            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="bai-viet">
+                <h1>Bài Viết</h1>
+                <div class="box-bai-viet1">
+                    <div class="trai">
+                        <img src="../img/bao.jpg">
+                        <h2 class="tieu-de">Tiêu đề bài viết</h2>
+                        <div class="ngay-xemthem">
+                            <div class="ngay">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                <span> 01/10/2024</span>
+                            </div>
+                            <div class="xemthem">
+                                <span>Xem thêm</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phai">
+                        <div class="box-bai-viet">
+                            <img src="../img/bao.jpg">
+                            <div class="phai">
+                                <h2>Tiêu đề bài viết 1 Tiêu đề bài viết Tiêu đề bài viết 1 1 Tiêu đề bài viết 1</h2>
+                                <div class="ngay-xemthem">
+                                    <div class="ngay">
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <span> 01/10/2024</span>
+                                    </div>
+                                    <div class="xemthem">
+                                        <span>Xem thêm</span>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-bai-viet">
+                            <img src="../img/bao.jpg">
+                            <div class="phai">
+                                <h2>Tiêu đề bài viết 1 Tiêu đề bài viết Tiêu đề bài viết 1 1 Tiêu đề bài viết 1</h2>
+                                <div class="ngay-xemthem">
+                                    <div class="ngay">
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <span> 01/10/2024</span>
+                                    </div>
+                                    <div class="xemthem">
+                                        <span>Xem thêm</span>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-bai-viet">
+                            <img src="../img/bao.jpg">
+                            <div class="phai">
+                                <h2>Tiêu đề bài viết 1 Tiêu đề bài viết Tiêu đề bài viết 1 1 Tiêu đề bài viết 1</h2>
+                                <div class="ngay-xemthem">
+                                    <div class="ngay">
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <span> 01/10/2024</span>
+                                    </div>
+                                    <div class="xemthem">
+                                        <span>Xem thêm</span>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="quytrinhmuahang">
+                <h1>Quy Trình Mua Hàng</h1>
+                <div class="box">
+                    <div class="boxsp">
+                        <img src="../img/luachonmuahang.jpg">
+                        <h1>Lựa chọn sản phẩm yêu thích</h1>
+                        <p>
+                            Khách hàng truy cập website để lựa chọn mẫu chậu lan
+                            yêu thích. Sau đó thêm vào giỏ hàng để tiến hành đặt hàng.
+                            Hoặc khách hàng cũng có thể inbox trực tiếp qua
+                            zalo/messenger và gửi ảnh/mã sản phẩm cho chúng tôi</p>
+                    </div>
+                    <div class="boxsp">
+                        <img src="../img/tuvan.png">
+                        <h1>Tư vấn sản phẩm theo yêu cầu.</h1>
+                        <p>
+                            Khi khách hàng đặt hàng thành công, sẽ có mail gửi về để
+                            xác nhận thông tin đặt hàng của khách hàng. Chúng tôi sẽ
+                            tiến hành liên hệ để xác nhận đơn hàng và thực hiện theo
+                            yêu cầu của khách hàng.</p>
+                    </div>
+                    <div class="boxsp">
+                        <img src="../img/giaohang.jpg">
+                        <h1>Hoàn thiện sản phẩm, giao hàng và
+                            thanh toán.</h1>
+                        <p>
+                            Chúng tôi tiến hành hoàn thiện đơn hàng, gửi hình ảnh cho
+                            khách hàng sau khi hoàn thành. Khi khách hàng ưng ý với
+                            chậu lan thì sẽ tiến hành giao hàng. Khách hàng thanh toán
+                            theo hình thức: chuyển khoản hoặc tiền mặt cho shipper
+                            khi nhận được chậu hoa.</p>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <div class="footer-section">
+                <h2>ĐỊA CHỈ</h2>
+                <p><i class="fas fa-phone"></i> Phone: 0981.599.399</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address 1: 17/20, ngõ Tân Lạc, Đại La, Hai Bà Trưng, Hà Nội</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address 2: 54 Đông An, Tân Đông Hiệp, Dĩ An, Bình Dương</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address 3: 51B Huỳnh Thị Tươi, K.P.Tân Thắng, Tân Bình, Dĩ An, Bình Dương</p>
+                <p><i class="fas fa-envelope"></i> Email: thegioigiadungonline.vn@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>ĐẠI LÝ - HỖ TRỢ</h2>
+                <p><i class="fas fa-store"></i> DANH SÁCH CÁC ĐẠI LÝ</p>
+                <p><i class="fas fa-cart-plus"></i> Hướng dẫn mua hàng</p>
+                <p><i class="fas fa-money-check-alt"></i> Hướng dẫn mua trả góp</p>
+                <p><i class="fas fa-headset"></i> Hỗ trợ khách hàng</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>CHÍNH SÁCH</h2>
+                <p><i class="fas fa-balance-scale"></i> Quy định, chính sách</p>
+                <p><i class="fas fa-exchange-alt"></i> Chính sách bảo hành – đổi trả</p>
+                <p><i class="fas fa-truck"></i> Giao hàng và lắp đặt</p>
+                <p><i class="fas fa-shield-alt"></i> Chính sách bảo mật TT cá nhân</p>
+                <p><i class="fas fa-tags"></i> Tin tức Khuyến mại</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>ĐĂNG KÝ NHẬN ƯU ĐÃI</h2>
+                <p>Hãy đăng ký email của bạn để cập nhật thông tin khuyến mại nhanh nhất</p>
+                <input type="email" placeholder="Nhập email của bạn" />
+                <button>ĐĂNG KÝ</button>
+                <div class="social-icons">
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
