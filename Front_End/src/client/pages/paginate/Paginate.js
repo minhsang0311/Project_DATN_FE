@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function usePagination(listSP, pageSize) {
     const [currentPage, setCurrentPage] = useState(0);
@@ -11,9 +11,9 @@ function usePagination(listSP, pageSize) {
     const tongSoTrang = Math.ceil(listSP.length / pageSize);
 
     const handlePageChange = (page) => {
+        if (page < 0 || page >= tongSoTrang) return; // Prevent page overflow
         setCurrentPage(page);
     };
-
     return { spTrong1Trang, tongSoTrang, currentPage, handlePageChange };
 }
 

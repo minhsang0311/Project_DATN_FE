@@ -58,9 +58,9 @@ function CategoryProducts() {
                     </div>
                     <div className="right-products">
                         <div className="box-sp">
-                            {spTrong1Trang?.map((sp, index) => (
+                            {Array.isArray(spTrong1Trang) ? spTrong1Trang.map((sp, index) => (
                                 <Product key={index} product={sp} />
-                            ))}
+                            )) : null}
                         </div>
                         {tongSoTrang > 1 && (
                             <ReactPaginate
