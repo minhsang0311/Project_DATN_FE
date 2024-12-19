@@ -138,7 +138,7 @@ function SpMostView() {
 
                 </div>
                 <div className="box-sp">
-                    {listsp ? listsp?.slice(0, 8)?.map((sp, i) => (
+                    {Array.isArray(listsp) ? listsp.slice(0, 8).map((sp, i) => (
                         <div className="product" key={i}>
                             {sp.Promotion > 0 && (
                                 <div className="discount-label">
@@ -179,6 +179,7 @@ function SpMostView() {
                             </div>
                         </div>
                     )) : null}
+
                 </div>
             </div>
         </div>
