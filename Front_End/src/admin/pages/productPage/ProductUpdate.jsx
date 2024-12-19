@@ -91,7 +91,7 @@ const ProductUpdate = () => {
                 if (data.message === "Xóa thành công") {
                     alert("Xóa ảnh bổ sung thành công!");
                     // Remove the deleted image from the state directly
-                    setAdditionalImages(prevImages => prevImages.filter(img => img.Image_ID !== imageId));
+                    setAdditionalImages(prevImages => prevImages?.filter(img => img.Image_ID !== imageId));
                 } else {
                     alert("Xóa ảnh không thành công. Vui lòng thử lại.");
                 }
@@ -190,7 +190,7 @@ const ProductUpdate = () => {
 
                             <div className="additional-images">
                                 {/* Hiển thị ảnh cũ */}
-                                {additionalImages.map((img, index) => (
+                                {additionalImages?.map((img, index) => (
                                     <div key={index} className="additional-image-item">
                                         <img src={img.Image_URL} alt={`Ảnh bổ sung ${index + 1}`} className="additional-image-preview" />
                                         <button
@@ -203,7 +203,7 @@ const ProductUpdate = () => {
                                 ))}
 
                                 {/* Hiển thị ảnh mới */}
-                                {newAdditionalImages.map((file, index) => (
+                                {newAdditionalImages?.map((file, index) => (
                                     <div key={`new-${index}`} className="additional-image-item">
                                         <img
                                             src={URL.createObjectURL(file)}
@@ -243,7 +243,7 @@ const ProductUpdate = () => {
                                 }
                             >
                                 <option value="">Chọn danh mục sản phẩm...</option>
-                                {categories.map(category => (
+                                {categories?.map(category => (
                                     <option key={category.Category_ID} value={category.Category_ID}>
                                         {category.Category_Name}
                                     </option>
@@ -263,7 +263,7 @@ const ProductUpdate = () => {
                                 }
                             >
                                 <option value="">Chọn hãng sản phẩm...</option>
-                                {brands.map(brand => (
+                                {brands?.map(brand => (
                                     <option key={brand.Brand_ID} value={brand.Brand_ID}>
                                         {brand.Brand_Name}
                                     </option>
@@ -304,7 +304,7 @@ const ProductUpdate = () => {
                                 onChange={e => {
                                     setProductUpdate({ ...productUpdate, Description: e.target.value });
                                 }}
-                                style={{ height: '130px' }} 
+                                style={{ height: '130px' }}
                             ></textarea>
                         </div>
                         <div className="form-group">

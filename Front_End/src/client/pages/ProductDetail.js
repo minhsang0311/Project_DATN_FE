@@ -61,7 +61,7 @@ const ProductDetail = () => {
 
         // Lấy giỏ hàng hiện tại từ localStorage
         const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingItem = currentCart.find(item => item.id === cartItem.id);
+        const existingItem = currentCart?.find(item => item.id === cartItem.id);
 
         // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
         if (existingItem) {
@@ -110,7 +110,7 @@ const ProductDetail = () => {
             <Toaster position="top-right" reverseOrder={false} /> {/* Thêm Toaster */}
             <div className="home">
                 <div className='thanh-dieu-huong'>
-                    <Link to="/"><h3>Trang chủ</h3></Link> 
+                    <Link to="/"><h3>Trang chủ</h3></Link>
                     <Link to="/cuahang"><h3>{sp.Product_Name}</h3></Link>
                 </div>
                 <div className="spchitiet">
@@ -125,7 +125,7 @@ const ProductDetail = () => {
                                     <img id="mainImage" src={mainImage} alt="Sản phẩm" height="380px" />
                                 </div>
                                 <div className="thumbnail-images">
-                                    {images.map((imageSrc, index) => (
+                                    {images?.map((imageSrc, index) => (
                                         <img
                                             key={index}
                                             className="thumbnail"
@@ -140,7 +140,7 @@ const ProductDetail = () => {
                             <div className="product-info">
                                 <h1 className="product-title">{sp.Product_Name}</h1>
                                 <hr />
-                                <p className="product-description">{sp.Description.split('\n').map((desc, index) => (
+                                <p className="product-description">{sp.Description.split('\n')?.map((desc, index) => (
                                     <li key={index}>{desc.replace('-', '')}</li>
                                 ))}</p>
                                 <div className="product-price">
@@ -173,7 +173,7 @@ const ProductDetail = () => {
                                         <td>Model</td>
                                         <td>
                                             <ul style={{ padding: 0, margin: 0 }}>
-                                                {sp.Description.split('\n').map((desc, index) => (
+                                                {sp.Description.split('\n')?.map((desc, index) => (
                                                     <li key={index}>{desc.replace('-', '').trim()}</li>
                                                 ))}
                                             </ul>
@@ -184,9 +184,9 @@ const ProductDetail = () => {
                         </div>
                     </div>
                 </div>
-                <Comments productId={id}/>
+                <Comments productId={id} />
                 <div className='ralated-products'></div>
-                <SPLienQuan id = {id} sosp={5}  />
+                <SPLienQuan id={id} sosp={5} />
             </div>
             <Footer />
         </Fragment>

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect ,Fragment} from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "./cartSlice"; // Import hành động thêm vào giỏ hàng
 
@@ -58,43 +58,43 @@ function Search() {
 
     return (
         <Fragment>
-            <Header/>
-        <div className="search-page">
-            <div className="header1">
-                <p>Có <span>{searchResults.length}</span> sản phẩm với từ khóa " <span>{searchQuery}</span> "</p>
-            </div>
-            <div className="box-sp">
-                {searchResults.length > 0 ? (
-                    searchResults.map((sp, i) => (
-                        <div key={i} className="product">
-                            {sp.Promotion > 0 && (
-                                <p className="discount-label">-{sp.Promotion}%</p>
-                            )}
-                            <div className="img-wrapper">
-                                <img src={sp.Image} alt={sp.Product_Name} />
-                            </div>
-                            <Link to={`/productDetail/${sp.Product_ID}`}>{sp.Product_Name}</Link>
-                            <div className="price_giohang">
-                                <div className="price">
-                                    {sp.Promotion > 0 ? (
-                                        <>
-                                            <p className="old-price">{formatCurrency(sp.Price)}</p>
-                                            <p className="new-price">{formatCurrency(sp.Price - (sp.Promotion * sp.Price) / 100)}</p>
-                                        </>
-                                    ) : (
-                                        <p className="new-price">{formatCurrency(sp.Price)}</p>
-                                    )}
+            <Header />
+            <div className="search-page">
+                <div className="header1">
+                    <p>Có <span>{searchResults.length}</span> sản phẩm với từ khóa " <span>{searchQuery}</span> "</p>
+                </div>
+                <div className="box-sp">
+                    {searchResults.length > 0 ? (
+                        searchResults?.map((sp, i) => (
+                            <div key={i} className="product">
+                                {sp.Promotion > 0 && (
+                                    <p className="discount-label">-{sp.Promotion}%</p>
+                                )}
+                                <div className="img-wrapper">
+                                    <img src={sp.Image} alt={sp.Product_Name} />
                                 </div>
-                                <button className="add-to-cart" onClick={() => handleAddToCart(sp)}>Giỏ hàng</button>
+                                <Link to={`/productDetail/${sp.Product_ID}`}>{sp.Product_Name}</Link>
+                                <div className="price_giohang">
+                                    <div className="price">
+                                        {sp.Promotion > 0 ? (
+                                            <>
+                                                <p className="old-price">{formatCurrency(sp.Price)}</p>
+                                                <p className="new-price">{formatCurrency(sp.Price - (sp.Promotion * sp.Price) / 100)}</p>
+                                            </>
+                                        ) : (
+                                            <p className="new-price">{formatCurrency(sp.Price)}</p>
+                                        )}
+                                    </div>
+                                    <button className="add-to-cart" onClick={() => handleAddToCart(sp)}>Giỏ hàng</button>
+                                </div>
                             </div>
-                        </div>
-                    ))
-                ) : (
-                    ""
-                )}
+                        ))
+                    ) : (
+                        ""
+                    )}
+                </div>
             </div>
-        </div>
-        <Footer />
+            <Footer />
         </Fragment>
     );
 }

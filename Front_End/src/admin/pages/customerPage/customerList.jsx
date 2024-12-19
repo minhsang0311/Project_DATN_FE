@@ -10,19 +10,20 @@ const CustomerList = ({ searchResults }) => {
   const [error, setError] = useState(null); // Error state
   useEffect(() => {
     if (!searchResults || searchResults.length === 0) {
-        // Fetch toàn bộ danh sách sản phẩm khi không có kết quả tìm kiếm
-        fetch(`${url}/customers`, {
-            method: 'GET',
-            headers: { "Content-type": "application/json", 'Authorization': 'Bearer ' + token }
+      // Fetch toàn bộ danh sách sản phẩm khi không có kết quả tìm kiếm
+      fetch(`${url}/customers`, {
+        method: 'GET',
+        headers: { "Content-type": "application/json", 'Authorization': 'Bearer ' + token }
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setcustomersList(data)
         })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data)
-              setcustomersList(data)})
-            
-            .catch(error => console.error('Error fetching product list:', error));
+
+        .catch(error => console.error('Error fetching product list:', error));
     }
-}, [token, searchResults]);
+  }, [token, searchResults]);
 
   const handleDelete = async (userId) => {
     if (window.confirm("Bạn có chắc chắn muốn xóa khách hàng này?")) {
@@ -40,7 +41,7 @@ const CustomerList = ({ searchResults }) => {
           alert(errorResponse.message || "Không thể xóa khách hàng.");
         } else {
           alert("Đã xóa khách hàng.");
-          setcustomersList(prev => prev.filter(customer => customer.User_ID !== userId));
+          setcustomersList(prev => prev?.filter(customer => customer.User_ID !== userId));
         }
       } catch (error) {
         console.error('Error deleting customer:', error);
@@ -72,7 +73,7 @@ const CustomerList = ({ searchResults }) => {
         <div className="grid-header">Điện thoại</div>
         <div className="grid-header">Vai trò</div>
         <div className="grid-header">Thao tác</div>
-        {displayCustomers.map((customer) => (
+        {displayCustomers?.map((customer) => (
           <Fragment key={customer.User_ID}>
             <div className="grid-item grid-item-element">{customer.User_ID}</div>
             <div className="grid-item grid-item-element">{customer.User_Name}</div>

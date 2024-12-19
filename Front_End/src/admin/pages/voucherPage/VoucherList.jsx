@@ -53,7 +53,7 @@ const VouchersList = ({ searchResults }) => {
                 } else {
                     alert("Voucher đã được khóa thành công!");
                     setVouchers(prev =>
-                        prev.map(voucher =>
+                        prev?.map(voucher =>
                             voucher.Voucher_ID === id ? { ...voucher, Locked: 1 } : voucher
                         )
                     );
@@ -81,7 +81,7 @@ const VouchersList = ({ searchResults }) => {
                 <div className="grid-header-voucher">Thời Hạn</div>
                 <div className="grid-header-voucher">Trạng thái</div>
                 <div className="grid-header-voucher">Thao tác</div>
-                {displayVouchers.map((voucher, index) => (
+                {displayVouchers?.map((voucher, index) => (
                     <Fragment key={voucher.Voucher_ID}>
                         <div className="grid-item-voucher">{index + 1}</div>
                         <div className="grid-item-voucher">{voucher.Code}</div>

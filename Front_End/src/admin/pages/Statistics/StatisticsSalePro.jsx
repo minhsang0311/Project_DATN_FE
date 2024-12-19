@@ -123,7 +123,7 @@ const StatisticsSalePro = () => {
               </tr>
             </thead>
             <tbody>
-              {salesData.map((item, index) => (
+              {salesData?.map((item, index) => (
                 <tr key={index}>
                   <td>{item.productName}</td>
                   <td>{item.totalQuantity}</td>

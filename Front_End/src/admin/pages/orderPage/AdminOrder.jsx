@@ -58,7 +58,7 @@ const AdminOrder = ({ searchResults }) => {
 
       // Cập nhật trạng thái trong danh sách đơn hàng
       setOrders((prevOrders) => {
-        let updatedOrders = prevOrders.map((order) =>
+        let updatedOrders = prevOrders?.map((order) =>
           order.Order_ID === orderId ? { ...order, Status: newStatus } : order
         );
         return updatedOrders;
@@ -84,60 +84,60 @@ const AdminOrder = ({ searchResults }) => {
         </div>
       </div>
       <div className="grid-container-order">
-            <div className="grid-header">Order ID</div>
-            <div className="grid-header">Tên khách hàng</div>
-            <div className="grid-header">Email</div>
-            <div className="grid-header">Số điện thoại</div>
-            <div className="grid-header">Địa chỉ</div>
-            <div className="grid-header">Trạng thái</div>
-            <div className="grid-header">Cập nhật trạng thái</div>
-          {displayOrders.map((order) => (
-            <Fragment key={order.Order_ID}>
-              <div className="grid-item grid-item-element">{order.Order_ID}</div>
-              <div className="grid-item grid-item-element">{order.User_Name}</div>
-              <div className="grid-item grid-item-element">{order.Email}</div>
-              <div className="grid-item grid-item-element">{order.Phone}</div>
-              <div className="grid-item grid-item-element">{order.Address}</div>
-              <div className="grid-item grid-item-element">
-                {selectedOrder === order.Order_ID ? (
-                  <select
-                    value={newStatus}
-                    onChange={(e) => setNewStatus(e.target.value)}
-                    className="status-select"
-                  >
-                    <option value="1">Chờ xác nhận</option>
-                    <option value="2">Đã xác nhận</option>
-                    <option value="3">Đang chuẩn bị hàng</option>
-                    <option value="4">Đang vận chuyển</option>
-                    <option value="5">Đã giao hàng</option>
-                    <option value="6">Đã hủy</option>
-                  </select>
-                ) : (
-                  <span className="status-display">{order.Status}</span>
-                )}
-              </div>
-              <div className="grid-item grid-item-element">
-                {selectedOrder === order.Order_ID ? (
-                  <button
-                    className="update-button"
-                    onClick={() => handleStatusChange(order.Order_ID)}
-                  >
-                    Cập nhật
-                  </button>
-                ) : (
-                  <button
-                    className="change-status-button"
-                    onClick={() => {
-                      setSelectedOrder(order.Order_ID);
-                      setNewStatus(order.Status); // Hiển thị Fragmentạng thái cũ khi chọn thay đổi
-                    }}
-                  >
-                    Thay đổi trạng thái
-                  </button>
-                )}
-              </div>
-            </Fragment>
-          ))}
+        <div className="grid-header">Order ID</div>
+        <div className="grid-header">Tên khách hàng</div>
+        <div className="grid-header">Email</div>
+        <div className="grid-header">Số điện thoại</div>
+        <div className="grid-header">Địa chỉ</div>
+        <div className="grid-header">Trạng thái</div>
+        <div className="grid-header">Cập nhật trạng thái</div>
+        {displayOrders?.map((order) => (
+          <Fragment key={order.Order_ID}>
+            <div className="grid-item grid-item-element">{order.Order_ID}</div>
+            <div className="grid-item grid-item-element">{order.User_Name}</div>
+            <div className="grid-item grid-item-element">{order.Email}</div>
+            <div className="grid-item grid-item-element">{order.Phone}</div>
+            <div className="grid-item grid-item-element">{order.Address}</div>
+            <div className="grid-item grid-item-element">
+              {selectedOrder === order.Order_ID ? (
+                <select
+                  value={newStatus}
+                  onChange={(e) => setNewStatus(e.target.value)}
+                  className="status-select"
+                >
+                  <option value="1">Chờ xác nhận</option>
+                  <option value="2">Đã xác nhận</option>
+                  <option value="3">Đang chuẩn bị hàng</option>
+                  <option value="4">Đang vận chuyển</option>
+                  <option value="5">Đã giao hàng</option>
+                  <option value="6">Đã hủy</option>
+                </select>
+              ) : (
+                <span className="status-display">{order.Status}</span>
+              )}
+            </div>
+            <div className="grid-item grid-item-element">
+              {selectedOrder === order.Order_ID ? (
+                <button
+                  className="update-button"
+                  onClick={() => handleStatusChange(order.Order_ID)}
+                >
+                  Cập nhật
+                </button>
+              ) : (
+                <button
+                  className="change-status-button"
+                  onClick={() => {
+                    setSelectedOrder(order.Order_ID);
+                    setNewStatus(order.Status); // Hiển thị Fragmentạng thái cũ khi chọn thay đổi
+                  }}
+                >
+                  Thay đổi trạng thái
+                </button>
+              )}
+            </div>
+          </Fragment>
+        ))}
       </div>
     </div>
   );

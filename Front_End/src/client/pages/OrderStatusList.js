@@ -31,8 +31,8 @@ function OrderStatus() {
                     'Authorization': `Bearer ${token}`,
                 },
             })
-            .then((res) => setOrderList(res.data))
-            .catch((err) => setError('Không thể lấy dữ liệu đơn hàng'));
+                .then((res) => setOrderList(res.data))
+                .catch((err) => setError('Không thể lấy dữ liệu đơn hàng'));
         }
     }, [navigate]);
 
@@ -59,19 +59,19 @@ function OrderStatus() {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders.map((order) => (
-                            
+                        {orders?.map((order) => (
+
                             <tr key={order.Order_ID}>
                                 <td>{order.Order_ID}</td>
                                 <td>{order.Product_Name}</td>
                                 <td>{order.created_at}</td>
-                                <td>{order.Address}</td> 
+                                <td>{order.Address}</td>
                                 <td>{order.total_amount} VND</td>
-                                 <td>{order.Status}</td>
+                                <td>{order.Status}</td>
                                 <td>
-                                <button className="button-detail" onClick={() => handleViewOrderDetails(order.Order_Detail_ID)}>
-    Xem Chi Tiết
-</button>
+                                    <button className="button-detail" onClick={() => handleViewOrderDetails(order.Order_Detail_ID)}>
+                                        Xem Chi Tiết
+                                    </button>
 
                                 </td>
                             </tr>

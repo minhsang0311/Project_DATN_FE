@@ -8,7 +8,7 @@ export default function Search() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const keyword = searchParams.get('q');
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,13 +27,13 @@ export default function Search() {
                 }
             }
         };
-    
+
         fetchData();
     }, [keyword]);
 
     const handleAddToCart = (product) => {
         const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingProduct = savedCart.find(item => item.Product_ID === product.Product_ID);
+        const existingProduct = savedCart?.find(item => item.Product_ID === product.Product_ID);
 
         if (existingProduct) {
             existingProduct.quantity = (existingProduct.quantity || 1) + 1;
@@ -41,9 +41,9 @@ export default function Search() {
             savedCart.push({ ...product, quantity: 1 });
         }
         localStorage.setItem('cart', JSON.stringify(savedCart));
-        navigate('/cart'); 
+        navigate('/cart');
     };
-    
+
     const formatCurrency = (value) => {
         return new Intl.NumberFormat('vi-VN', {
             style: 'currency',
@@ -61,7 +61,7 @@ export default function Search() {
                     ) : (
                         <div className="product-list">
                             {productSearch.length > 0 ? (
-                                productSearch.map((sp) => (
+                                productSearch?.map((sp) => (
                                     <div className="product" key={sp.Product_ID}>
                                         {sp.Promotion > 0 && (
                                             <div className="discount-labell">
@@ -75,14 +75,14 @@ export default function Search() {
                                             <h1>{sp.Product_Name}</h1>
                                         </Link>
                                         <div className="price">
-                                        {sp.Promotion > 0 ? (
-                                            <>
-                                                <p className="old-price">{formatCurrency(sp.Price)}</p>
-                                                <p className="new-price">{formatCurrency(sp.Price - (sp.Promotion * sp.Price) / 100)}</p>
-                                            </>
-                                        ) : (
-                                            <p className="new-price">{formatCurrency(sp.Price)}</p>
-                                        )}
+                                            {sp.Promotion > 0 ? (
+                                                <>
+                                                    <p className="old-price">{formatCurrency(sp.Price)}</p>
+                                                    <p className="new-price">{formatCurrency(sp.Price - (sp.Promotion * sp.Price) / 100)}</p>
+                                                </>
+                                            ) : (
+                                                <p className="new-price">{formatCurrency(sp.Price)}</p>
+                                            )}
                                         </div>
                                         <button className="add-to-cart" onClick={() => handleAddToCart(sp)}>
                                             Thêm vào giỏ hàng

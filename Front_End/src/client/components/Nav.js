@@ -23,7 +23,7 @@ const Nav = () => {
       <ul className={`menu_trangchu ${showMobileMenu ? 'show' : ''}`}>
         <li><Link to="/">Trang chủ</Link></li>
         <li><Link to="/cuahang">Cửa hàng</Link></li>
-        {list.map((category, index) => (
+        {list?.map((category, index) => (
           <li key={index}>
             <Link to={`/category/${category.Category_ID}`}>{category.Category_Name}</Link>
           </li>

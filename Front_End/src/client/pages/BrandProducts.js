@@ -8,14 +8,14 @@ import usePagination from "./paginate/Paginate";
 
 
 const brandImages = {
-    '1': '/assets/img/banner_loai_bepdien.jpg', 
+    '1': '/assets/img/banner_loai_bepdien.jpg',
     '2': '/assets/img/banner_loai_mayxaysinhto.jpg',
     '3': '/assets/img/banner_loai_noi.jpg',
     '4': '/assets/img/banner_loai_dao.jpg',
     '5': '/assets/img/banner_loai_lovisong.jpg',
     '6': '/assets/img/banner_loai_mayhutbui.jpg',
-  };
-  
+};
+
 function BrandProducts() {
     const { Brand_ID } = useParams();
     const [listsp, setListSP] = useState([]);
@@ -27,36 +27,36 @@ function BrandProducts() {
 
     useEffect(() => {
         fetch(`http://localhost:3000/user/Products_brand/${Brand_ID}`)
-          .then(res => res.json())
-          .then(data => {
-            setListSP(data);
-          });
-    
+            .then(res => res.json())
+            .then(data => {
+                setListSP(data);
+            });
+
         fetch(`http://localhost:3000/user/brand/${Brand_ID}`) // API lấy thông tin danh mục
-          .then(res => res.json())
-          .then(brandData => {
-            
-            setBrandName(brandData.Brand_Name); // Cập nhật tên danh mục
-          });
+            .then(res => res.json())
+            .then(brandData => {
+
+                setBrandName(brandData.Brand_Name); // Cập nhật tên danh mục
+            });
     }, [Brand_ID]);
-    
-    
+
+
 
     return (
         <Fragment>
             <Header />
             <div className="cuahang">
                 <div className='thanh-dieu-huong'>
-                    <Link to="/"><h3>Trang chủ</h3></Link> / 
+                    <Link to="/"><h3>Trang chủ</h3></Link> /
                     <a href><h3>{brandName}</h3></a>
                 </div>
                 <div className="noidung">
                     <div className="left_box">
-                       
+
                     </div>
                     <div className="right-products">
                         <div className="box-sp">
-                            {spTrong1Trang.map((sp, index) => (
+                            {spTrong1Trang?.map((sp, index) => (
                                 <Product key={index} product={sp} />
                             ))}
                         </div>

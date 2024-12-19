@@ -126,7 +126,7 @@ const Comments = ({ productId }) => {
 
             <ul>
                 {comments.length > 0 ? (
-                    comments.map((comment) => (
+                    comments?.map((comment) => (
                         <li key={comment.Review_ID} className="comment-item">
                             <img
                                 src="https://i.pinimg.com/736x/c6/e5/65/c6e56503cfdd87da299f72dc416023d4.jpg"

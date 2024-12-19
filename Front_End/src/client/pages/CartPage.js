@@ -21,10 +21,10 @@ const CartPage = () => {
     }, [items]);
 
     const handlePaymentClick = () => {
-        const user = JSON.parse(localStorage.getItem('user')); 
+        const user = JSON.parse(localStorage.getItem('user'));
         if (!user) {
             alert("Bạn cần đăng nhập để tiếp tục thanh toán.");
-            navigate('/register_login'); 
+            navigate('/register_login');
         } else {
             navigate('/payment');
         }
@@ -51,7 +51,7 @@ const CartPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {items.map((item, index) => (
+                            {items?.map((item, index) => (
                                 <tr key={item.id}>
                                     <td>{index + 1}</td>
                                     <td >{item.name}</td>
@@ -82,7 +82,7 @@ const CartPage = () => {
                     }
                 }} className="btn-clear-cart">Xóa tất cả</button>
                 {items.length > 0 && (
-                    <button 
+                    <button
                         onClick={handlePaymentClick}
                         className="btn-payment"
                         style={{ marginTop: '10px' }}

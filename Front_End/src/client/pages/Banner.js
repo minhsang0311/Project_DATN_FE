@@ -9,7 +9,7 @@ const Banner = () => {
   const [listbrands, setListbrands] = useState([]);
   const totalImages = 4;
   const navigate = useNavigate(); // Hook điều hướng
-  
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_HOST_URL}user/brand`)
       .then((res) => res.json())
@@ -45,7 +45,7 @@ const Banner = () => {
           <i className="fa-solid fa-bars"></i> <p>Hãng sản phẩm</p>
         </div>
         <ul id="danh-muc-list" style={{ display: isDanhMucVisible ? 'none' : 'block' }}>
-          {listbrands.map((brand) => (
+          {listbrands?.map((brand) => (
             <li key={brand.Brand_ID}>
               <Link to={`/brand/${brand.Brand_ID}`}>{brand.Brand_Name}</Link>
             </li>
@@ -59,7 +59,7 @@ const Banner = () => {
           className="image-container"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {images.map((image, index) => (
+          {images?.map((image, index) => (
             <img
               key={index}
               src={image.src}
@@ -86,7 +86,7 @@ const Banner = () => {
 
         {/* Chỉ báo ảnh */}
         <div className="indicators">
-          {images.map((_, index) => (
+          {images?.map((_, index) => (
             <div
               key={index}
               className={`dot ${index === currentIndex ? 'active' : ''}`}

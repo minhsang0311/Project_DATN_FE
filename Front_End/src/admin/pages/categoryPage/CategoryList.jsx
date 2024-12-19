@@ -69,7 +69,7 @@ function CategoryList({ searchResults }) {
                 <div className="grid-header-category">Tên sản phẩm</div>
                 <div className="grid-header-category">Ẩn/Hiện</div>
                 <div className="grid-header-category">Thao tác</div>
-                {displayCategories.map((category, index) => (
+                {displayCategories?.map((category, index) => (
                     <React.Fragment key={category.Category_ID}>
                         <div className="grid-item-category">{index + 1}</div>
                         <div className="grid-item-category">{category.Category_Name}</div>

@@ -37,7 +37,7 @@ const PaymentPage = () => {
 
         const storedUserId = JSON.parse(localStorage.getItem('user'));
         if (!storedUserId) {
-           toast.error('Bạn cần phải đăng nhập để thanh toán');
+            toast.error('Bạn cần phải đăng nhập để thanh toán');
             navigate('/register_login');
         } else {
             if (storedUserId.role !== 0) {
@@ -108,7 +108,7 @@ const PaymentPage = () => {
             payment_method: paymentMethod,
             total_amount: finalAmount,
             total_quantity: totalQuantity,
-            items: cartItems.map(item => ({
+            items: cartItems?.map(item => ({
                 Product_ID: item.id,
                 Quantity: item.quantity,
                 Price: item.price
@@ -135,7 +135,7 @@ const PaymentPage = () => {
                         }
                         navigate('/order');
                     } else {
-                      
+
                     }
                 })
                 .catch(error => {
@@ -176,7 +176,7 @@ const PaymentPage = () => {
         <Fragment>
             <Header />
             <div className='container-pay'>
-            <Toaster position="top-right" reverseOrder={false} /> {/* Thêm Toaster */}
+                <Toaster position="top-right" reverseOrder={false} /> {/* Thêm Toaster */}
 
                 <h1>THANH TOÁN</h1>
                 <div className="container-payment">
@@ -264,7 +264,7 @@ const PaymentPage = () => {
 
                     <div className="section">
                         <h2>Đơn hàng ({cartItems.length} sản phẩm)</h2>
-                        {cartItems.map((item, index) => (
+                        {cartItems?.map((item, index) => (
                             <div key={index} className="product-payment">
                                 <img src={item.image} alt={item.name} />
                                 <div className="product-info">

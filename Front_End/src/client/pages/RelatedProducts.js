@@ -28,7 +28,7 @@ const SPLienQuan = ({ id, sosp }) => {
         setListSP([]); // Gán mảng rỗng nếu có lỗi
       });
   }, [id, sosp]);
-  
+
 
   const formatCurrency = (value) => {
     return new Intl.NumberFormat('vi-VN', {
@@ -48,7 +48,7 @@ const SPLienQuan = ({ id, sosp }) => {
     dispatch(addToCart(cartItem)); // Gửi hành động thêm vào giỏ hàng
     setShowToast(true);
     setTimeout(() => {
-        setShowToast(false);
+      setShowToast(false);
     }, 3000); // Hiện thông báo trong 3 giây
   };
 
@@ -60,30 +60,30 @@ const SPLienQuan = ({ id, sosp }) => {
       {showToast && <div className="toast">Đã thêm vào giỏ hàng</div>}
       <div className="products-grid">
         {listsp.length > 0 ? (
-          listsp.slice(0, 5).map((sp, i) => (
+          listsp?.slice(0, 5)?.map((sp, i) => (
             <div className="relatedproduct" key={i}>
               {sp.Promotion > 0 && (
                 <div className="discount-label">
-                    -{sp.Promotion}%
+                  -{sp.Promotion}%
                 </div>
               )}
               <div className="img-wrapper">
-                  <img src={sp.Image} alt="" />
+                <img src={sp.Image} alt="" />
               </div>
               <Link to={"/productDetail/" + sp.Product_ID}><a>{sp.Product_Name}</a></Link>
               <div className="price_giohang">
-                  <div className="price">
-                      {sp.Promotion > 0 ? (
-                          <>
-                              <p className="old-price">{formatCurrency(sp.Price)}</p>
-                              <p className="new-price">{formatCurrency(sp.Price - (sp.Promotion * sp.Price) / 100)}</p>
-                          </>
-                      ) : (
-                          <p className="new-price">{formatCurrency(sp.Price)}</p>
-                      )}
-                  </div>
+                <div className="price">
+                  {sp.Promotion > 0 ? (
+                    <>
+                      <p className="old-price">{formatCurrency(sp.Price)}</p>
+                      <p className="new-price">{formatCurrency(sp.Price - (sp.Promotion * sp.Price) / 100)}</p>
+                    </>
+                  ) : (
+                    <p className="new-price">{formatCurrency(sp.Price)}</p>
+                  )}
+                </div>
 
-                  <button className="add-to-cart" onClick={() => handleAddToCart(sp)}>Giỏ hàng</button>
+                <button className="add-to-cart" onClick={() => handleAddToCart(sp)}>Giỏ hàng</button>
               </div>
             </div>
           ))

@@ -63,7 +63,7 @@ function Cuahang() {
             <Header />
             <div className="cuahang">
                 <div className='thanh-dieu-huong'>
-                    <Link to="/"><h3>Trang chủ</h3></Link> / 
+                    <Link to="/"><h3>Trang chủ</h3></Link> /
                     <Link to="/cuahang"><h3>Cửa hàng</h3></Link>
                 </div>
                 <div className='noidung'>
@@ -71,7 +71,7 @@ function Cuahang() {
                         <h4>Lọc giá</h4>
                         <button onClick={() => setSortOrder('highToLow')} className={sortOrder === 'highToLow' ? 'active' : ''}>Giá giảm dần</button>
                         <button onClick={() => setSortOrder('lowToHigh')} className={sortOrder === 'lowToHigh' ? 'active' : ''}>Giá tăng dần</button>
-                        
+
                         <div className="price-range">
                             <input
                                 type="text"
@@ -91,7 +91,7 @@ function Cuahang() {
                         <h4>Thương hiệu</h4>
                         <select onChange={(e) => setBrand(e.target.value)} value={brand}>
                             <option value="">Chọn hãng</option>
-                            {brands.map((brand) => (
+                            {brands?.map((brand) => (
                                 <option key={brand.Brand_ID} value={brand.Brand_ID}>
                                     {brand.Brand_Name}
                                 </option>
@@ -100,7 +100,7 @@ function Cuahang() {
                     </div>
                     <div className="right-products">
                         <div className="box-sp">
-                            {spTrong1Trang.map((sp, index) => (
+                            {spTrong1Trang?.map((sp, index) => (
                                 <Product key={index} product={sp} />
                             ))}
                         </div>

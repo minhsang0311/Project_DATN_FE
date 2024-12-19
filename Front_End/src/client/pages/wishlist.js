@@ -68,7 +68,7 @@ function Wishlist() {
             })
             .then(() => {
                 alert("Sản phẩm đã được xóa khỏi danh sách yêu thích.");
-                setWishList((prevWishlist) => prevWishlist.filter((item) => item.Product_ID !== productId));
+                setWishList((prevWishlist) => prevWishlist?.filter((item) => item.Product_ID !== productId));
             })
             .catch((err) => {
                 console.error("Lỗi khi xóa sản phẩm yêu thích:", err);
@@ -92,7 +92,7 @@ function Wishlist() {
                     <div className="grid-header">Giá</div>
                     <div className="grid-header">Mô tả</div>
                     <div className="grid-header">Thao tác</div>
-                    {wishlist.map((product, index) => (
+                    {wishlist?.map((product, index) => (
                         <Fragment key={product.Product_ID}>
 
                             <div className="grid-item grid-item-element">{index + 1}</div>
@@ -108,7 +108,7 @@ function Wishlist() {
                             </div>
                             <div className="grid-item grid-item-element">{Number(product.Price).toLocaleString("vi")} VNĐ</div>
                             <div className="grid-item">
-                                {product.Description.split('\n').map((desc, index) => (
+                                {product.Description.split('\n')?.map((desc, index) => (
                                     <div className="description" key={index}>{desc.replace('-', '')}</div>
                                 ))}
                             </div>

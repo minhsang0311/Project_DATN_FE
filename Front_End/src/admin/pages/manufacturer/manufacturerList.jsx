@@ -15,7 +15,7 @@ const ManufacturerList = ({ searchResults }) => {
       const fetchManufacturers = async () => {
         try {
           setLoading(true);
-          
+
           // Making the request with token in the Authorization header
           const response = await axios.get('http://localhost:3000/admin/brands', {
             headers: {
@@ -51,7 +51,7 @@ const ManufacturerList = ({ searchResults }) => {
       });
 
       if (response.status === 200) {
-        setManufacturers(manufacturers.filter(manufacturer => manufacturer.Brand_ID !== id));
+        setManufacturers(manufacturers?.filter(manufacturer => manufacturer.Brand_ID !== id));
         alert('Nhà sản xuất đã được xóa.');
       }
     } catch (err) {
@@ -73,7 +73,7 @@ const ManufacturerList = ({ searchResults }) => {
           </button>
         </div>
       </div>
-      
+
       {loading ? (
         <p>Đang tải dữ liệu...</p>
       ) : error ? (
@@ -83,7 +83,7 @@ const ManufacturerList = ({ searchResults }) => {
           <div className="grid-header">ID</div>
           <div className="grid-header">Tên nhà sản xuất</div>
           <div className="grid-header">Thao tác</div>
-          {displayManufacturers.map(manufacturer => (
+          {displayManufacturers?.map(manufacturer => (
             <Fragment key={manufacturer.Brand_ID}>
               <div className="grid-item grid-item-element">{manufacturer.Brand_ID}</div>
               <div className="grid-item grid-item-element">{manufacturer.Brand_Name}</div>

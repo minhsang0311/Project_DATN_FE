@@ -9,7 +9,7 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const newItem = action.payload;
-      const existingItem = state.items.find((item) => item.id === newItem.id);
+      const existingItem = state.items?.find((item) => item.id === newItem.id);
 
       if (existingItem) {
         existingItem.quantity += 1; // Nếu sản phẩm đã có trong giỏ, tăng số lượng
@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       localStorage.setItem('cart', JSON.stringify(state.items));
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
+      state.items = state.items?.filter(item => item.id !== action.payload);
       localStorage.setItem('cart', JSON.stringify(state.items)); // Cập nhật localStorage
     },
     clearCart: (state) => {
@@ -29,14 +29,14 @@ const cartSlice = createSlice({
       localStorage.removeItem('cart'); // Xóa dữ liệu trong localStorage
     },
     incrementQuantity: (state, action) => {
-      const item = state.items.find(item => item.id === action.payload);
+      const item = state.items?.find(item => item.id === action.payload);
       if (item) {
         item.quantity += 1; // Tăng số lượng
         localStorage.setItem('cart', JSON.stringify(state.items)); // Cập nhật localStorage
       }
     },
     decrementQuantity: (state, action) => {
-      const item = state.items.find(item => item.id === action.payload);
+      const item = state.items?.find(item => item.id === action.payload);
       if (item && item.quantity > 1) {
         item.quantity -= 1; // Giảm số lượng nếu lớn hơn 1
         localStorage.setItem('cart', JSON.stringify(state.items)); // Cập nhật localStorage

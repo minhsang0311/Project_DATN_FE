@@ -39,7 +39,7 @@ const ProductAdd = () => {
 
         setAdditionalImages(prevImages => [
             ...prevImages,
-            ...files.map(file => ({
+            ...files?.map(file => ({
                 file,
                 preview: URL.createObjectURL(file)
             }))
@@ -178,7 +178,7 @@ const ProductAdd = () => {
                                 }
                             >
                                 <option value="">Chọn danh mục sản phẩm ...</option>
-                                {categories.map(category => (
+                                {categories?.map(category => (
                                     <option key={category.Category_ID} value={category.Category_ID}>
                                         {category.Category_Name}
                                     </option>
@@ -195,7 +195,7 @@ const ProductAdd = () => {
                                 }
                             >
                                 <option value="">Chọn hãng sản phẩm ...</option>
-                                {brands.map(brand => (
+                                {brands?.map(brand => (
                                     <option key={brand.Brand_ID} value={brand.Brand_ID}>
                                         {brand.Brand_Name}
                                     </option>
@@ -222,7 +222,7 @@ const ProductAdd = () => {
                             />
                         </div>
                         <div className="image-preview-container">
-                            {additionalImages.map((imageObj, index) => (
+                            {additionalImages?.map((imageObj, index) => (
                                 <div key={index} className="image-preview-item">
                                     <img
                                         style={{ width: '50px', height: "50px" }}
@@ -232,7 +232,7 @@ const ProductAdd = () => {
                                     />
                                     <button
                                         onClick={() => {
-                                            const updatedImages = additionalImages.filter((_, idx) => idx !== index);
+                                            const updatedImages = additionalImages?.filter((_, idx) => idx !== index);
                                             setAdditionalImages(updatedImages);
                                         }}
                                     >
@@ -266,7 +266,7 @@ const ProductAdd = () => {
                                 } />
                         </div>
                         <div className="radio-group">
-                        <label>Ẩn/Hiện</label>
+                            <label>Ẩn/Hiện</label>
                             <label>
                                 <input
                                     type="radio"

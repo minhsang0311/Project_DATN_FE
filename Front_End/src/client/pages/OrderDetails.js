@@ -49,7 +49,7 @@ function OrderDetail() {
 
         const token = localStorage.getItem('tokenUser');
         try {
-            await axios.put(`http://localhost:3000/user/cancelOrder/${orderId}`, 
+            await axios.put(`http://localhost:3000/user/cancelOrder/${orderId}`,
                 { reason: finalReason },
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );
@@ -94,19 +94,19 @@ function OrderDetail() {
                 </div>
                 {orderDetail.Status === 'Chờ xác nhận' && (
                     <div className="cancel-order">
-                        <select 
+                        <select
                             onChange={(e) => setCancelReason(e.target.value)}
                             value={cancelReason}
                         >
                             <option value="">Chọn lý do hủy đơn hàng</option>
-                            {suggestedReasons.map((reason, index) => (
+                            {suggestedReasons?.map((reason, index) => (
                                 <option key={index} value={reason}>{reason}</option>
                             ))}
                         </select>
                         {cancelReason === "Lý do khác" && (
                             <textarea
                                 value={customReason} // Giá trị textarea riêng
-                                onChange={(e) => setCustomReason(e.target.value)} 
+                                onChange={(e) => setCustomReason(e.target.value)}
                                 placeholder="Nhập lý do khác..."
                             />
                         )}

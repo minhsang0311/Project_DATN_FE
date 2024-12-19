@@ -38,7 +38,7 @@ const Comments = ({ searchResults }) => {
             const data = await response.json();
             alert(data.message);
             // Cập nhật lại trạng thái hiển thị trong danh sách
-            setComments(comments.map(comment => comment.Review_ID === id ? { ...comment, Show_Hidden: newStatus } : comment));
+            setComments(comments?.map(comment => comment.Review_ID === id ? { ...comment, Show_Hidden: newStatus } : comment));
         } catch (err) {
             setError('Lỗi khi cập nhật trạng thái hiển thị');
         }
@@ -62,7 +62,7 @@ const Comments = ({ searchResults }) => {
                 <div className="grid-header">Tên sản phẩm</div>
                 <div className="grid-header">Bình luận</div>
                 <div className="grid-header">Ẩn/ Hiện</div>
-                {displayComents.map(comment => (
+                {displayComents?.map(comment => (
                     <Fragment key={comment.Review_ID}>
 
                         <div className="grid-item grid-item-element">{comment.Review_ID}</div>

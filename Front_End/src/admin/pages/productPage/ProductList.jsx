@@ -35,7 +35,7 @@ const ProductList = ({ searchResults }) => {
                     return res.json().then(err => { alert(err.message); });
                 } else {
                     alert("Đã xóa sản phẩm");
-                    setProductList(prev => prev.filter(product => product.Product_ID !== id));
+                    setProductList(prev => prev?.filter(product => product.Product_ID !== id));
                 }
             });
     };
@@ -62,7 +62,7 @@ const ProductList = ({ searchResults }) => {
                 <div className="grid-header">Lượt xem</div>
                 <div className="grid-header">Ẩn_Hiện</div>
                 <div className="grid-header">Thao tác</div>
-                {displayProducts.map((product, index) => (
+                {displayProducts?.map((product, index) => (
                     <Fragment key={product.Product_ID}>
                         <div className="grid-item grid-item-element">{product.Product_ID}</div>
                         <div className="grid-item grid-item-element">{product.Product_Name}</div>
@@ -71,7 +71,7 @@ const ProductList = ({ searchResults }) => {
                         </div>
                         <div className="grid-item grid-item-element">{Number(product.Price).toLocaleString("vi")} VNĐ</div>
                         <div className="grid-item">
-                            {product.Description.split('\n').map((desc, index) => (
+                            {product.Description.split('\n')?.map((desc, index) => (
                                 <div className="description" key={index}>{desc.replace('-', '')}</div>
                             ))}
                         </div>

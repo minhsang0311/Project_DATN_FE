@@ -24,7 +24,7 @@ function SpMoi() {
             if (userId) {
                 const response = await fetch(`${process.env.REACT_APP_HOST_URL}user/wishlist/${userId}`);
                 const data = await response.json();
-                setLikedProducts(data.map(item => item.Product_ID)); // Lưu ID sản phẩm đã yêu thích
+                setLikedProducts(data?.map(item => item.Product_ID)); // Lưu ID sản phẩm đã yêu thích
             }
         };
 
@@ -49,7 +49,7 @@ function SpMoi() {
 
         // Lấy giỏ hàng hiện tại từ localStorage
         const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingItem = currentCart.find(item => item.id === cartItem.id);
+        const existingItem = currentCart?.find(item => item.id === cartItem.id);
 
         // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
         if (existingItem) {
@@ -104,7 +104,7 @@ function SpMoi() {
             if (response.ok) {
                 // Cập nhật trạng thái yêu thích
                 if (isLiked) {
-                    setLikedProducts(prev => prev.filter(id => id !== product.Product_ID));
+                    setLikedProducts(prev => prev?.filter(id => id !== product.Product_ID));
                 } else {
                     setLikedProducts(prev => [...prev, product.Product_ID]);
                 }
@@ -132,7 +132,7 @@ function SpMoi() {
                     <h1>DEAL DÀNH CHO BẠN</h1>
                 </div>
                 <div className="box-sp">
-                    {listsp.slice(0, 10).map((sp, i) => (
+                    {listsp?.slice(0, 10)?.map((sp, i) => (
                         <div className="product" key={i}>
                             {sp.Promotion > 0 && (
                                 <div className="discount-label">
