@@ -7,7 +7,7 @@ function usePagination(listSP, pageSize) {
         setCurrentPage(0);
     }, [listSP]);
     const offset = currentPage * pageSize;
-    const spTrong1Trang = listSP.slice(offset, offset + pageSize);
+    const spTrong1Trang = Array.isArray(listSP) ? listSP?.slice(offset, offset + pageSize) : null;
     const tongSoTrang = Math.ceil(listSP.length / pageSize);
 
     const handlePageChange = (page) => {
